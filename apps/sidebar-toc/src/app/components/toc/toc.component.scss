@@ -1,5 +1,5 @@
 $focus-color: #005b96;
-$unfocus-color: #aaa;
+$unfocus-color: #939393;
 
 div, a {
 	transition: 0.5s;
@@ -11,18 +11,25 @@ div, a {
     top: 50px;
 }
 
+.no-nothing {
+	padding: 0px;
+	margin: 0px;
+}
+
+.bigger-card {
+	width: 400px;
+}
+
 .chapter-icon {
-	margin: auto;
 	border-radius: 50%;
-	box-shadow: $focus-color 0px 0px 0px 7px inset;
 	width: 30px;
 	height: 30px;
 }
 
 .chapter {
 	width: 100%;
-	padding-top: 20px;
-	padding-bottom: 20px;
+	padding-top: 7px;
+	padding-bottom: 7px;
 }
 
 .clear {
@@ -45,11 +52,12 @@ div, a {
 }
 
 .chapter-main-container {
-	width: 400px;
+	width: 100%;
 }
 
 a {
 	text-decoration: none;
+	font-size: 1.2em;
 }
 
 a.focused {
@@ -61,9 +69,21 @@ a.unfocused {
 }
 
 .chapter-icon.focused {
-	box-shadow: $focus-color 0px 0px 0px 7px inset;
+	box-shadow: $focus-color 0px 0px 0px 8px inset;
 }
 
 .chapter-icon.unfocused {
-	box-shadow: $unfocus-color 0px 0px 0px 7px inset;
+	box-shadow: $unfocus-color 0px 0px 0px 15px inset;
+	transform: scale(.5, .5);
+}
+
+.line-container {
+	width: 30px;
+}
+
+.box {
+	margin: auto;
+	background-color: $unfocus-color;
+	width: 3px;
+	height: 20px;
 }

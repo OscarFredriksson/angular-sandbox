@@ -1,9 +1,9 @@
 
 <div class="sticky-top">
 	<!--<mat-card class="p-1">-->
-    <mat-card>
+    <mat-card class="bigger-card">
 		<div class="chapter-main-container">
-			<mat-card-content *ngFor="let section of sections">
+			<mat-card-content class="no-nothing" *ngFor="let section of sections;let i = index">
 				<div class="chapter">
 					<div class="chapter-left-container">
 						<div class="chapter-icon"
@@ -19,6 +19,9 @@
 						<!--<mat-divider *ngIf="i !== sections.length-1"></mat-divider>-->
 					</div>
 					<div class="clear"></div>
+				</div>
+				<div class="line-container" *ngIf="i !== sections.length-1">
+					<div class="box"></div>
 				</div>
 			</mat-card-content>
 		</div>
