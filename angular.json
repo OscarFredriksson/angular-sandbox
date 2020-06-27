@@ -1,0 +1,141 @@
+{
+  "version": 1,
+  "projects": {
+    "component-delete": {
+      "projectType": "application",
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/component-delete",
+      "sourceRoot": "apps/component-delete/src",
+      "prefix": "angular-sandbox",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/component-delete",
+            "index": "apps/component-delete/src/index.html",
+            "main": "apps/component-delete/src/main.ts",
+            "polyfills": "apps/component-delete/src/polyfills.ts",
+            "tsConfig": "apps/component-delete/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/component-delete/src/favicon.ico",
+              "apps/component-delete/src/assets"
+            ],
+            "styles": ["apps/component-delete/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/component-delete/src/environments/environment.ts",
+                  "with": "apps/component-delete/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "component-delete:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "component-delete:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "component-delete:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/component-delete/tsconfig.app.json",
+              "apps/component-delete/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/component-delete/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/component-delete/jest.config.js",
+            "tsConfig": "apps/component-delete/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "apps/component-delete/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "component-delete-e2e": {
+      "root": "apps/component-delete-e2e",
+      "sourceRoot": "apps/component-delete-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/component-delete-e2e/cypress.json",
+            "tsConfig": "apps/component-delete-e2e/tsconfig.e2e.json",
+            "devServerTarget": "component-delete:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "component-delete:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/component-delete-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/component-delete-e2e/**/*"]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "schematics": {
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
+    }
+  },
+  "defaultProject": "component-delete"
+}
