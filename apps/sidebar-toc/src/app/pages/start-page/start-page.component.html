@@ -44,16 +44,7 @@
             </section>
         </div>
         <div class="col">
-            <div class="sticky-top">
-                <mat-card>
-                    <mat-card-content *ngFor="let section of sections">
-                        <a mat-button href="#{{section.id}}"
-                            [color]="currentSectionId == section.id ? 'primary' : 'basic'" #navItem>
-                            {{section.title}}
-                        </a>
-                    </mat-card-content>
-                </mat-card>
-            </div>
+            <app-toc [sections]="sections"></app-toc>
         </div>
     </div>
 </div>

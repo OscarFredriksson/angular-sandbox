@@ -17,38 +17,11 @@ export class StartPageComponent implements OnInit
   @ViewChildren('navItem')
   navItems: QueryList<any>
 
-  currentSectionId = null;
 
   constructor () { }
 
   ngOnInit(): void
   {
 
-  }
-
-  ngAfterViewInit()
-  {
-    window.addEventListener('scroll', this.onScroll.bind(this), true);
-  }
-
-  onScroll()
-  {
-    let navElements = this.navItems.toArray();
-
-    navElements.forEach((element) =>
-    {
-      let id = element._elementRef.nativeElement.getAttribute('href').toString();
-
-      id = id.substring(1, id.length);
-
-      let offsetTop = document.getElementById(id).offsetTop;
-
-      if (window.scrollY > offsetTop - 250)
-      {
-        this.currentSectionId = id;
-      }
-
-
-    });
   }
 }
