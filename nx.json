@@ -25,6 +25,13 @@
     "component-delete-e2e": {
       "tags": [],
       "implicitDependencies": ["component-delete"]
+    },
+    "sidebar-toc": {
+      "tags": []
+    },
+    "sidebar-toc-e2e": {
+      "tags": [],
+      "implicitDependencies": ["sidebar-toc"]
     }
   }
 }

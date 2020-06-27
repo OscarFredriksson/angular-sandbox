@@ -1,0 +1,12 @@
+<mat-expansion-panel class="m-2" *ngFor="let dropDown of dropDowns">
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            {{dropDown.title}}
+        </mat-panel-title>
+        <mat-panel-description>
+            {{dropDown.desc}}
+        </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>{{dropDown.content}}</p>
+    <button mat-raised-button color="primary" class="" (click)="deleteRow(dropDown.title)">Delete</button>
+</mat-expansion-panel>

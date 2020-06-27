@@ -1,0 +1,59 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-8">
+            <section *ngFor="let section of sections" id="{{section.id}}">
+                <mat-card class="ml-3 mr-3 mb-3">
+                    <mat-card-title>
+                        {{section.title}}
+                    </mat-card-title>
+                    <mat-card-subtitle>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum risus tellus, placerat eu
+                        purus
+                        quis,
+                        volutpat suscipit diam. Nam viverra purus id magna ullamcorper tincidunt. Aenean non velit
+                        porttitor, bibendum
+                        arcu in, commodo nisi. Integer faucibus urna in lorem venenatis ultricies nec nec lacus. Duis id
+                        eros et ipsum
+                        elementum varius eu id nunc. Curabitur sed ullamcorper dolor. Sed varius sapien in magna
+                        bibendum, a
+                        dictum
+                        ligula suscipit.
+
+                        Nam finibus neque eu ex feugiat, id feugiat turpis bibendum. Praesent id sem ipsum. Suspendisse
+                        ac
+                        turpis in
+                        magna pretium dapibus. In hac habitasse platea dictumst. Curabitur venenatis orci in blandit
+                        mollis.
+                        Suspendisse
+                        iaculis diam id mi tempus tincidunt. In suscipit tortor eget tortor pharetra, sit amet feugiat
+                        diam
+                        rhoncus.
+                        Aenean dignissim lectus leo, nec finibus massa feugiat id. Curabitur ut ligula vel massa porta
+                        facilisis sit
+                        amet ut metus. Proin luctus velit sit amet ligula dapibus molestie. Donec a lectus id enim
+                        feugiat
+                        malesuada eu
+                        nec nulla. Etiam nec sagittis mauris. Maecenas blandit enim vitae lectus aliquam consectetur
+                        vitae
+                        ut metus. In
+                        id metus nec dui pretium ultricies. Duis semper gravida efficitur. Pellentesque habitant morbi
+                        tristique
+                        senectus et netus et malesuada fames ac turpis egestas.
+                    </mat-card-subtitle>
+                </mat-card>
+            </section>
+        </div>
+        <div class="col">
+            <div class="sticky-top">
+                <mat-card>
+                    <mat-card-content *ngFor="let section of sections">
+                        <a mat-button href="#{{section.id}}"
+                            [color]="currentSectionId == section.id ? 'primary' : 'basic'" #navItem>
+                            {{section.title}}
+                        </a>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>
