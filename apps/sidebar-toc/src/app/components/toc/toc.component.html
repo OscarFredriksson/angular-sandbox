@@ -1,11 +1,12 @@
 
 <div class="sticky-top">
-    <mat-card>
-        <mat-card-content *ngFor="let section of sections">
-            <a mat-button href="#{{section.id}}"
+    <mat-card class="p-1">
+        <ng-container *ngFor="let section of sections; let i = index">
+            <a class="m-2" mat-button href="#{{section.id}}"
                 [color]="currentSectionId == section.id ? 'primary' : 'basic'" #navItem>
                 {{section.title}}
             </a>
-        </mat-card-content>
+            <mat-divider *ngIf="i !== sections.length-1"></mat-divider>
+        </ng-container>
     </mat-card>
 </div>
