@@ -14,14 +14,7 @@ export class StartPageComponent implements OnInit
     { id: "s3", title: "Section 3" }
   ]
 
-  @ViewChildren('navItem')
-  navItems: QueryList<any>
-
-
   constructor () { }
 
-  ngOnInit(): void
-  {
-
-  }
+  ngOnInit(): void { }
 }

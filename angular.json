@@ -8,9 +8,9 @@
           "style": "scss"
         }
       },
-      "root": "apps/component-delete",
-      "sourceRoot": "apps/component-delete/src",
-      "prefix": "angular-sandbox",
+      "root": "apps/sidebar-toc",
+      "sourceRoot": "apps/sidebar-toc/src",
+      "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",

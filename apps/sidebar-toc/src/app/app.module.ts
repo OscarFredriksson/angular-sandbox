@@ -9,9 +9,10 @@ import { RouterModule } from '@angular/router';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '../../../../libs/shared/material.module';
+import { SectionComponent } from './components/section/section.component';
 
 @NgModule({
-  declarations: [AppComponent, StartPageComponent, TocComponent],
+  declarations: [AppComponent, StartPageComponent, TocComponent, SectionComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
