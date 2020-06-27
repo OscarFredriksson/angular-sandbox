@@ -30,7 +30,7 @@ export class TocComponent implements OnInit {
 
     navElements.forEach((element) =>
     {
-      let id = element._elementRef.nativeElement.getAttribute('href').toString();
+      let id = element.nativeElement.getAttribute('href').toString();
 
       id = id.substring(1, id.length);
 

@@ -1,4 +1,69 @@
+$focus-color: #005b96;
+$unfocus-color: #aaa;
+
+div, a {
+	transition: 0.5s;
+	transition-timing-function: ease;
+}
+
 .sticky-top
 {
     top: 50px;
+}
+
+.chapter-icon {
+	margin: auto;
+	border-radius: 50%;
+	box-shadow: $focus-color 0px 0px 0px 7px inset;
+	width: 30px;
+	height: 30px;
+}
+
+.chapter {
+	width: 100%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.clear {
+	clear: both;
+}
+
+.chapter-left-container {
+	float: left;
+	width: 30px;
+}
+
+.chapter-right-container {
+	float: left;
+	line-height: 30px;
+	padding-left: 10px;
+	font-family: arial;
+	font-size: 1.6em;
+	word-wrap: break-word;
+	width: 300px;
+}
+
+.chapter-main-container {
+	width: 400px;
+}
+
+a {
+	text-decoration: none;
+}
+
+a.focused {
+	color: $focus-color;
+}
+
+a.unfocused {
+	color: $unfocus-color;
+}
+
+.chapter-icon.focused {
+	box-shadow: $focus-color 0px 0px 0px 7px inset;
+}
+
+.chapter-icon.unfocused {
+	box-shadow: $unfocus-color 0px 0px 0px 7px inset;
 }

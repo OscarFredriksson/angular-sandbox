@@ -1,11 +1,30 @@
 
 <div class="sticky-top">
     <mat-card>
-        <mat-card-content *ngFor="let section of sections">
-            <a mat-button href="#{{section.id}}"
-                [color]="currentSectionId == section.id ? 'primary' : 'basic'" #navItem>
-                {{section.title}}
-            </a>
-        </mat-card-content>
+		<div class="chapter-main-container">
+			<mat-card-content *ngFor="let section of sections">
+				<div class="chapter">
+					<div class="chapter-left-container">
+						<div class="chapter-icon"
+							 [ngClass]="currentSectionId == section.id ? 'focused' : 'unfocused'">
+						</div>
+
+					</div>
+					<div class="chapter-right-container">
+						<!--
+						<a mat-button href="#{{section.id}}"
+							[color]="currentSectionId == section.id ? 'primary' : 'basic'" #navItem>
+							{{section.title}}
+						</a>
+						-->
+						<a href="#{{section.id}}"
+							[ngClass]="currentSectionId == section.id ? 'focused' : 'unfocused'" #navItem>
+							{{section.title}}
+						</a>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</mat-card-content>
+		</div>
     </mat-card>
 </div>
