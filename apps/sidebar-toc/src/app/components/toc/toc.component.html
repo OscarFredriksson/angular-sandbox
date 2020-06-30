@@ -1,29 +1,21 @@
 
 <div class="sticky-top">
-	<!--<mat-card class="p-1">-->
-    <mat-card class="bigger-card">
-		<div class="chapter-main-container">
-			<mat-card-content class="no-nothing" *ngFor="let section of sections;let i = index">
-				<div class="chapter">
-					<div class="chapter-left-container">
-						<div class="chapter-icon"
-							 [ngClass]="currentSectionId == section.id ? 'focused' : 'unfocused'">
-						</div>
+    <mat-card>
+		<mat-card-content class="no-nothing" *ngFor="let section of sections;let i = index">
+			<div class="chapter-row">
+					<div class="chapter-icon"
+							[ngClass]="currentSectionId == section.id ? 'focused' : 'unfocused'">
+					</div>
+					<a href="#{{section.id}}"
+						[ngClass]="currentSectionId == section.id ? 'focused' : 'unfocused'" #navItem>
+						{{section.title}}
+					</a>
 
-					</div>
-					<div class="chapter-right-container">
-						<a href="#{{section.id}}"
-							[ngClass]="currentSectionId == section.id ? 'focused' : 'unfocused'" #navItem>
-							{{section.title}}
-						</a>
-						<!--<mat-divider *ngIf="i !== sections.length-1"></mat-divider>-->
-					</div>
-					<div class="clear"></div>
-				</div>
-				<div class="line-container" *ngIf="i !== sections.length-1">
-					<div class="box"></div>
-				</div>
-			</mat-card-content>
-		</div>
+				<div class="clear"></div>
+			</div>
+			<div class="line-container" *ngIf="i !== sections.length-1">
+				<div class="line"></div>
+			</div>
+		</mat-card-content>
     </mat-card>
 </div>

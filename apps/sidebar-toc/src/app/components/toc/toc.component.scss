@@ -1,8 +1,11 @@
-$focus-color: #005b96;
+$text-focus-color: #333333;
+$focus-color: #03a5fc; //#005b96;
 $unfocus-color: #939393;
 
+$dot-radius: 15px;
+
 div, a {
-	transition: 0.5s;
+	transition: 0.4s;
 	transition-timing-function: ease;
 }
 
@@ -16,20 +19,22 @@ div, a {
 	margin: 0px;
 }
 
-.bigger-card {
+/*.bigger-card {
 	width: 400px;
-}
+}*/
 
 .chapter-icon {
 	border-radius: 50%;
-	width: 30px;
-	height: 30px;
+	width: $dot-radius;
+	height: $dot-radius;
 }
 
-.chapter {
+.chapter-row {
 	width: 100%;
-	padding-top: 7px;
-	padding-bottom: 7px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	display: flex;
+	align-items: center;
 }
 
 .clear {
@@ -52,16 +57,22 @@ div, a {
 }
 
 .chapter-main-container {
-	width: 100%;
+	//width: 100%;
 }
 
 a {
-	text-decoration: none;
-	font-size: 1.2em;
+	//text-decoration: none;
+	margin-left: 5px;
+	font-family: 'Roboto';
+	font-size: 1em;
+	font-weight: 400;
 }
 
 a.focused {
-	color: $focus-color;
+	color: $text-focus-color;	//$focus-color;
+	margin-left: 10px;
+	font-size: 1.25em;
+	font-weight: 400;
 }
 
 a.unfocused {
@@ -69,21 +80,25 @@ a.unfocused {
 }
 
 .chapter-icon.focused {
-	box-shadow: $focus-color 0px 0px 0px 8px inset;
+	box-shadow: $focus-color 0px 0px 0px 100px inset;
 }
 
 .chapter-icon.unfocused {
 	box-shadow: $unfocus-color 0px 0px 0px 15px inset;
-	transform: scale(.5, .5);
+	transform: scale(.6, .6);
 }
 
 .line-container {
-	width: 30px;
+	//width: 30px;
 }
 
-.box {
-	margin: auto;
-	background-color: $unfocus-color;
-	width: 3px;
-	height: 20px;
+$line-width: 2px;
+
+.line {
+	width: $line-width;
+	margin-left: ($dot-radius / 2) - ($line-width / 2);
+	margin-top: - 5px;
+	margin-bottom: -5px;
+	background-color: lightgray;
+	height: 15px;
 }
