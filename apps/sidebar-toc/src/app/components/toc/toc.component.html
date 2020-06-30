@@ -1,7 +1,7 @@
 
 <div class="sticky-top">
-    <mat-card>
-		<mat-card-content class="no-nothing" *ngFor="let section of sections;let i = index">
+    <mat-card class="slow-animation">
+		<mat-card-content class="no-nothing slow-animation" *ngFor="let section of sections;let i = index">
 			<div class="chapter-row">
 					<div class="chapter-icon"
 							[ngClass]="currentSectionId == section.id ? 'focused' : 'unfocused'">

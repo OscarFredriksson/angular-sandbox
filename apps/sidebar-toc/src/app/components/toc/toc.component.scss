@@ -30,9 +30,8 @@ div, a {
 }
 
 .chapter-row {
+	height: 2rem;
 	width: 100%;
-	padding-top: 5px;
-	padding-bottom: 5px;
 	display: flex;
 	align-items: center;
 }
@@ -101,4 +100,10 @@ $line-width: 2px;
 	margin-bottom: -5px;
 	background-color: lightgray;
 	height: 15px;
+}
+
+::ng-deep .slow-animation
+{
+	transition: 1000s linear all;
+	transition-timing-function: ease;
 }
