@@ -32,6 +32,13 @@
     "sidebar-toc-e2e": {
       "tags": [],
       "implicitDependencies": ["sidebar-toc"]
+    },
+    "markdown-editor": {
+      "tags": []
+    },
+    "markdown-editor-e2e": {
+      "tags": [],
+      "implicitDependencies": ["markdown-editor"]
     }
   }
 }
